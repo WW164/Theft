@@ -29,6 +29,8 @@ public class NetworkUIController : MonoBehaviour
 
     private void Update()
     {
+        if (NetworkManager.Singleton == null) return;
+
         // Keep status live-updated in case connection state changes
         if (NetworkManager.Singleton.IsHost || NetworkManager.Singleton.IsClient)
         {
